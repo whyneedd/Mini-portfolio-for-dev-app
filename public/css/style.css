@@ -11,7 +11,9 @@
 
 *::-webkit-scrollbar-thumb {
     background: var(--third-color);
+    border-radius: 2rem;
 }
+
 :root {
     --seconds-color: #fff;
     --main-color: #3498DB;
@@ -70,9 +72,24 @@ a {
 
 .l-header .logo a span {
     color: var(--seconds-color);
-    font-size: 2em;
-    font-weight: 700; 
+    font-size: 3em;
+    font-weight: 700;
+    font-family: "Nerko One", sans-serif;
 }
+
+.l-header .logo a span::before {
+    content: "";
+    position: absolute;
+    display: block;
+    bottom: 0;
+    left: 0;
+    width: 60%;
+    height: 4px;
+    border-radius: 0.75rem;
+    box-shadow: 0px 14px 13px 0px rgb(0, 0, 0, 0.2);
+    background: var(--seconds-color);
+}
+
 .l-header.active::before {
     bottom: 0;
 }
@@ -105,7 +122,7 @@ a {
     display: block;
     font-size: 20px;
     transition: all 0.3s ease-in-out;
-} 
+}
 
 .l-nav li i:hover {
     color: var(--main-color);
@@ -120,19 +137,17 @@ a {
     padding: 3rem 0 0;
 }
 
-.home-main 
-{
+.home-main {
     display: flex;
     justify-content: center;
     max-width: 1130px;
     padding: 8px;
-    padding-bottom: 12px;    
+    padding-bottom: 12px;
     margin: 0 auto;
 }
 
 
-.home-text 
-{
+.home-text {
     text-align: center;
     max-width: 40%;
     color: var(--seconds-color);
@@ -140,23 +155,33 @@ a {
 
 .home-text h2 {
     font-size: 6em;
+    font-family: "Nerko One", sans-serif;
+    text-shadow: 0px 12px 14px rgb(0, 0, 0);
 }
-.home-social li
-{
+
+.home-text p {
+    font-size: 18px;
+}
+
+.home-social li {
     display: inline-block;
     margin-right: 1rem;
     margin-top: 8px;
 }
 
-.home-social li a 
-{
+.home-social li a {
     display: block;
     color: #fff;
     font-size: 24px;
     transition: 0.4s ease-in-out;
 }
 
-.img {
+.home-social li i {
+    box-shadow: 0px 14px 13px 0px rgb(0, 0, 0, 0.2);
+
+}
+
+.home-img {
     overflow: hidden;
 }
 
@@ -164,29 +189,41 @@ a {
     transform: translateY(-5%);
     color: var(--main-color);
 }
+
 .home-btn {
     display: block;
-    margin: 10px auto;
+    margin: 18px auto;
     padding: 12px 75px;
     background: var(--main-color);
     outline: none;
     border: none;
     font-size: 17px;
+    cursor: pointer;
     color: var(--seconds-color);
     border-radius: 2em;
+    box-shadow: 0px 14px 13px 0px rgb(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
 }
+
+.home-btn:hover {
+    transform: scale(1.1);
+}
+
 @media screen and (max-width: 760px) {
     .home-main {
         flex-direction: column;
     }
+
     .home-text {
         text-align: left;
         max-width: 80%;
         margin-left: 8%;
     }
+
     .home-text h2 {
         font-size: 4em;
     }
+
     .home-btn {
         margin-left: 0;
         margin-right: 0;
